@@ -1,0 +1,23 @@
+<h1>Sample using socket io</h1>
+<small>Requires the server to be initialized</small>
+<div class="mensajes">
+  <ul *ngIf="mensajes">
+    <div *ngIf="mensajes.length === 0">No hay mensajes para mostrar!</div>
+
+    <li *ngFor="let mensaje of mensajes">
+      {{ mensaje }}
+    </li>
+  </ul>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>
+    Autor
+    <input formControlName="author" />
+  </label>
+  <label>
+    Mensaje
+    <input formControlName="message" />
+  </label>
+  <button type="submit">Enviar</button>
+</form>

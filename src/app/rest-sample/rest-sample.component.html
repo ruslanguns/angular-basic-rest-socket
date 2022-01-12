@@ -1,0 +1,15 @@
+<ng-container *ngIf="personajes">
+  <h1>Sample using rest api</h1>
+  <div class="container">
+    <div class="card" *ngFor="let personaje of personajes">
+      <img [src]="personaje.image" [alt]="personaje.name" />
+      <h4>{{ personaje.name }}</h4>
+      <ul>
+        <li>Status: '{{ personaje.status }}'</li>
+        <li>Specie: '{{ personaje.species }}'</li>
+        <li>Gender: '{{ personaje.gender }}'</li>
+        <li>Created: '{{ personaje.created | date: "short" }}'</li>
+      </ul>
+    </div>
+  </div>
+</ng-container>
